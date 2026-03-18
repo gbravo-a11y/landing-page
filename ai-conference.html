@@ -165,13 +165,19 @@ h4{font-weight:700}
 }
 </style>
 </head>
+
 <body>
 
 <div class="sticky" id="sbar">
   <p><strong>The AI Conference 2026</strong> — San Francisco · 3 Days · 5 Tracks · 120+ Speakers</p>
-  <button class="btn-sw">Secure Your Pass</button>
-</div>
+  <button class="btn-sw" onclick="document.getElementById('ticket-modal').style.display='block'">Secure Your Pass</button>
 
+</div>
+<script>
+  document.getElementById('ticket-modal').addEventListener('click', function(e) {
+    if (e.target === this) this.style.display = 'none';
+  });
+</script>
 <!-- HERO -->
 <section class="hero">
   <div class="W">
@@ -368,7 +374,8 @@ h4{font-weight:700}
 <div class="mid-cta reveal">
   <h3>5,500+ Builders. Researchers. Leaders.</h3>
   <p>Three days. Five tracks. San Francisco.</p>
-  <button class="btn-sw">Secure Your Pass Today</button>
+  <button class="btn-p" onclick="document.getElementById('ticket-modal').style.display='block'">Secure Your Pass</button>
+
 </div>
 
 <!-- TESTIMONIAL -->
@@ -438,5 +445,28 @@ function tmGo(n){tmImgs[tmIdx].classList.remove('active');tmDots[tmIdx].classLis
 setInterval(()=>tmGo((tmIdx+1)%tmImgs.length),4000);
 document.querySelectorAll('[data-target]').forEach(el=>cu.observe(el));
 </script>
+<!-- TICKET MODAL -->
+<div id="ticket-modal" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.7); z-index:9999; overflow-y:auto;">
+  <div style="background:#fff; max-width:700px; margin:40px auto; padding:2rem; border-radius:8px; position:relative;">
+    <button onclick="document.getElementById('ticket-modal').style.display='none'"
+      style="position:absolute; top:1rem; right:1rem; background:none; border:none; font-size:1.5rem; cursor:pointer;">✕</button>
+    <h2 style="margin-bottom:1.5rem;">Get Your Pass</h2>
+    <!-- Ticket Tailor Widget. Paste this into your website where you want the widget to appear. Do not change the code or the widget may not work properly. -->
+    <div class="tt-widget">
+      <div class="tt-widget-fallback">
+        <p><a href="https://tix.aiconference.com/checkout/new-session/id/7588902/chk/283c/?ref=website_widget&show_search_filter=true&show_date_filter=true&show_sort=true" target="_blank">Click here to buy tickets</a><br /></p>
+      </div>
+      <script src="https://cdn.tickettailor.com/js/widgets/min/widget.js"
+        data-url="https://tix.aiconference.com/checkout/new-session/id/7588902/chk/283c/?ref=website_widget&show_search_filter=true&show_date_filter=true&show_sort=true"
+        data-type="inline"
+        data-inline-minimal="true"
+        data-inline-show-logo="false"
+        data-inline-bg-fill="false"
+        data-inline-inherit-ref-from-url-param=""
+        data-inline-ref="website_widget"></script>
+    </div>
+    <!-- End of Ticket Tailor Widget -->
+  </div>
+</div>
 </body>
 </html>
