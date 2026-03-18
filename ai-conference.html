@@ -60,6 +60,14 @@ h4{font-weight:700}
 .cg-extra{overflow:hidden;max-height:0;transition:max-height .45s ease}.cg-extra.open{max-height:1400px}
 .cg-toggle{display:flex;align-items:center;justify-content:center;gap:9px;width:100%;padding:14px;background:var(--wh);border:none;border-top:1px solid var(--bd);cursor:pointer;font-family:inherit;font-size:10px;letter-spacing:2px;text-transform:uppercase;font-weight:700;color:var(--pu);transition:background .2s}.cg-toggle:hover{background:var(--bg)}
 .cg-toggle svg{transition:transform .3s}.cg-toggle.open svg{transform:rotate(180deg)}
+@media(max-width:640px){
+  .compare h2{margin-bottom:28px;}
+  .cg-head{grid-template-columns:1fr}
+  .ch:first-child{border-right:none;border-bottom:1px solid var(--bd)}
+  .crow{grid-template-columns:1fr}
+  .cc:first-child{border-right:none;border-bottom:1px solid var(--bd)}
+  .cc:last-child{border-bottom:none}
+}
 
 /* BRIDGE */
 .bridge{background:var(--wh);padding:88px 5%}
